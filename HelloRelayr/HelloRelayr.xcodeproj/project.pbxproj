@@ -110,9 +110,9 @@
 			children = (
 				7D19D5D1199A18160081478F /* AppDelegate.h */,
 				7D19D5D2199A18160081478F /* AppDelegate.m */,
-				7D19D5D3199A18160081478F /* main.m */,
 				7D19D5D4199A18160081478F /* ViewController.h */,
 				7D19D5D5199A18160081478F /* ViewController.m */,
+				7D19D5D3199A18160081478F /* main.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -495,6 +495,7 @@
 				7D19D5C9199A17420081478F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7D19D5CA199A17420081478F /* Build configuration list for PBXNativeTarget "iOSAppTests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +504,7 @@
 				7D19D5CC199A17420081478F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
