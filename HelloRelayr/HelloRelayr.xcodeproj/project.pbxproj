@@ -13,6 +13,7 @@
 		7D19D5D8199A18160081478F /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D19D5D5199A18160081478F /* SignInViewController.m */; };
 		7D19D5DF199A18990081478F /* iOSAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D19D5DE199A18990081478F /* iOSAppTests.m */; };
 		7D19D5E5199A22AE0081478F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D19D5E4199A22AE0081478F /* Main.storyboard */; };
+		7D19D5ED199A2B9A0081478F /* Relayr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D19D5E9199A2B5C0081478F /* Relayr.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		7D19D5DE199A18990081478F /* iOSAppTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iOSAppTests.m; sourceTree = "<group>"; };
 		7D19D5E1199A18A10081478F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D19D5E4199A22AE0081478F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		7D19D5E9199A2B5C0081478F /* Relayr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Relayr.framework; path = ../Frameworks/Relayr.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D19D5ED199A2B9A0081478F /* Relayr.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +67,7 @@
 				7D19D5AB199A17410081478F /* iOSApp */,
 				7D19D5C2199A17410081478F /* iOSAppTests */,
 				7D19D5AA199A17400081478F /* Products */,
+				7D19D5EB199A2B820081478F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -154,6 +158,14 @@
 				7D19D5E4199A22AE0081478F /* Main.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		7D19D5EB199A2B820081478F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D19D5E9199A2B5C0081478F /* Relayr.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,6 +327,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/jamie/development/relayr/ios-sample-apps/Frameworks",
+				);
 				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -363,6 +379,10 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/jamie/development/relayr/ios-sample-apps/Frameworks",
+				);
 				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
