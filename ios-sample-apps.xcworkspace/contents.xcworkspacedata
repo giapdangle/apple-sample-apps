@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:HelloRelayr/HelloRelayr.xcodeproj">
+      location = "group:HelloWunderbar/HelloWunderbar.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:HelloWunderbar/HelloWunderbar.xcodeproj">
+      location = "group:HelloRelayr/HelloRelayr.xcodeproj">
    </FileRef>
 </Workspace>
