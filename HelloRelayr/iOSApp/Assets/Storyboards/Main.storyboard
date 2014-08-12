@@ -4,56 +4,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
     </dependencies>
     <scenes>
-        <!--Sign In View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController title="Sign In View Controller" id="BYZ-38-t0r" customClass="SignInViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAk-zr-2N5">
-                                <rect key="frame" x="200" y="540" width="200" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="0kb-Ae-05d"/>
-                                    <constraint firstAttribute="height" constant="40" id="r5e-cY-a3U"/>
-                                </constraints>
-                                <state key="normal" title="Sign Out">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4w-gF-NiH">
-                                <rect key="frame" x="200" y="492" width="200" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="DoC-uD-ZOB"/>
-                                    <constraint firstAttribute="width" constant="200" id="ixc-Rd-3zz"/>
-                                </constraints>
-                                <state key="normal" title="Sign In">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="1sh-QU-E0g" kind="show" id="l7c-0c-xrC"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="RAk-zr-2N5" firstAttribute="top" secondItem="H4w-gF-NiH" secondAttribute="bottom" constant="8" id="GMn-4R-ob1"/>
-                            <constraint firstAttribute="centerX" secondItem="H4w-gF-NiH" secondAttribute="centerX" id="QWU-zU-u2F"/>
-                            <constraint firstAttribute="centerX" secondItem="RAk-zr-2N5" secondAttribute="centerX" id="gyC-fj-oL8"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RAk-zr-2N5" secondAttribute="bottom" constant="20" id="u4m-Ms-Qq9"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Sign In" id="oH7-f9-gKM"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1612" y="-329"/>
-        </scene>
         <!--Data View Controller-->
         <scene sceneID="Bvg-SK-Ysg">
             <objects>
@@ -75,15 +25,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Wunderbar Data" id="hyp-CP-wG6"/>
+                    <navigationItem key="navigationItem" title="Hello, relayr!" id="hyp-CP-wG6">
+                        <barButtonItem key="rightBarButtonItem" title="Sign Out" id="vH5-J6-KGC">
+                            <connections>
+                                <action selector="signOut:" destination="1sh-QU-E0g" id="3fy-Pa-fl3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4dD-FS-HMv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2309" y="-329"/>
+            <point key="canvasLocation" x="1392" y="-389"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Sb9-b2-7Ey">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1j4-Mf-EYP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yaG-ek-egb" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OCZ-ya-BFy">
@@ -92,12 +49,11 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="JhK-OD-4Jd"/>
+                        <segue destination="1sh-QU-E0g" kind="relationship" relationship="rootViewController" id="jsL-m5-3Hh"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1j4-Mf-EYP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="917" y="-329"/>
+            <point key="canvasLocation" x="693" y="-389"/>
         </scene>
     </scenes>
 </document>

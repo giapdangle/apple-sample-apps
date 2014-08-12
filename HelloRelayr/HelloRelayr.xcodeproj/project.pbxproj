@@ -10,7 +10,6 @@
 		7D19D5CF199A18090081478F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D19D5CE199A18090081478F /* Images.xcassets */; };
 		7D19D5D6199A18160081478F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D19D5D2199A18160081478F /* AppDelegate.m */; };
 		7D19D5D7199A18160081478F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D19D5D3199A18160081478F /* main.m */; };
-		7D19D5D8199A18160081478F /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D19D5D5199A18160081478F /* SignInViewController.m */; };
 		7D19D5DF199A18990081478F /* iOSAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D19D5DE199A18990081478F /* iOSAppTests.m */; };
 		7D19D5E5199A22AE0081478F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D19D5E4199A22AE0081478F /* Main.storyboard */; };
 		7D19D5ED199A2B9A0081478F /* Relayr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D19D5E9199A2B5C0081478F /* Relayr.framework */; };
@@ -35,8 +34,6 @@
 		7D19D5D1199A18160081478F /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7D19D5D2199A18160081478F /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7D19D5D3199A18160081478F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7D19D5D4199A18160081478F /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
-		7D19D5D5199A18160081478F /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		7D19D5DA199A181C0081478F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D19D5DE199A18990081478F /* iOSAppTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iOSAppTests.m; sourceTree = "<group>"; };
 		7D19D5E1199A18A10081478F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -122,8 +119,6 @@
 			children = (
 				7D19D5D1199A18160081478F /* AppDelegate.h */,
 				7D19D5D2199A18160081478F /* AppDelegate.m */,
-				7D19D5D4199A18160081478F /* SignInViewController.h */,
-				7D19D5D5199A18160081478F /* SignInViewController.m */,
 				7D19D5F4199A33F20081478F /* DataViewController.h */,
 				7D19D5F5199A33F20081478F /* DataViewController.m */,
 				7D19D5D3199A18160081478F /* main.m */,
@@ -280,7 +275,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D19D5F6199A33F20081478F /* DataViewController.m in Sources */,
-				7D19D5D8199A18160081478F /* SignInViewController.m in Sources */,
 				7D19D5D7199A18160081478F /* main.m in Sources */,
 				7D19D5D6199A18160081478F /* AppDelegate.m in Sources */,
 			);
