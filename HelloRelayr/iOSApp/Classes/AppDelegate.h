@@ -1,9 +1,9 @@
 //
 //  AppDelegate.h
-//  HelloRelayr
+//  iOSApp
 //
-//  Created by Marcos Sánchez-Dehesa on 12/08/14.
-//  Copyright (c) 2014 Jamie Banford. All rights reserved.
+//  Created by Jamie on 12/08/2014.
+//
 //
 
 #import <UIKit/UIKit.h>

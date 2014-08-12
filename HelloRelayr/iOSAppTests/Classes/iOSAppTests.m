@@ -1,19 +1,19 @@
 //
-//  HelloRelayrTests.m
-//  HelloRelayrTests
+//  iOSAppTests.m
+//  iOSAppTests
 //
-//  Created by Marcos Sánchez-Dehesa on 12/08/14.
-//  Copyright (c) 2014 Jamie Banford. All rights reserved.
+//  Created by Jamie on 12/08/2014.
+//
 //
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface HelloRelayrTests : XCTestCase
+@interface iOSAppTests : XCTestCase
 
 @end
 
-@implementation HelloRelayrTests
+@implementation iOSAppTests
 
 - (void)setUp {
     [super setUp];
