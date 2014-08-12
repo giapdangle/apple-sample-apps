@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7D19D5B8199A17410081478F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D19D5B6199A17410081478F /* Main.storyboard */; };
 		7D19D5CF199A18090081478F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D19D5CE199A18090081478F /* Images.xcassets */; };
 		7D19D5D6199A18160081478F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D19D5D2199A18160081478F /* AppDelegate.m */; };
 		7D19D5D7199A18160081478F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D19D5D3199A18160081478F /* main.m */; };
 		7D19D5D8199A18160081478F /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D19D5D5199A18160081478F /* SignInViewController.m */; };
 		7D19D5DF199A18990081478F /* iOSAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D19D5DE199A18990081478F /* iOSAppTests.m */; };
+		7D19D5E5199A22AE0081478F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D19D5E4199A22AE0081478F /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,7 +27,6 @@
 
 /* Begin PBXFileReference section */
 		7D19D5A9199A17400081478F /* Hello, Relayr!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hello, Relayr!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D19D5B7199A17410081478F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7D19D5BF199A17410081478F /* Hello, Relayr! Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hello, Relayr! Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D19D5CE199A18090081478F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7D19D5D1199A18160081478F /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -38,6 +37,7 @@
 		7D19D5DA199A181C0081478F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D19D5DE199A18990081478F /* iOSAppTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iOSAppTests.m; sourceTree = "<group>"; };
 		7D19D5E1199A18A10081478F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D19D5E4199A22AE0081478F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +82,6 @@
 				7D19D5CD199A18090081478F /* Assets */,
 				7D19D5D0199A18160081478F /* Classes */,
 				7D19D5D9199A181C0081478F /* Configuration */,
-				7D19D5B6199A17410081478F /* Main.storyboard */,
 			);
 			path = iOSApp;
 			sourceTree = "<group>";
@@ -101,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				7D19D5CE199A18090081478F /* Images.xcassets */,
+				7D19D5E3199A22AE0081478F /* Storyboards */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -146,6 +146,14 @@
 				7D19D5E1199A18A10081478F /* Info.plist */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		7D19D5E3199A22AE0081478F /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				7D19D5E4199A22AE0081478F /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,7 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D19D5B8199A17410081478F /* Main.storyboard in Resources */,
+				7D19D5E5199A22AE0081478F /* Main.storyboard in Resources */,
 				7D19D5CF199A18090081478F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,17 +277,6 @@
 			targetProxy = 7D19D5C0199A17410081478F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		7D19D5B6199A17410081478F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7D19D5B7199A17410081478F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		7D19D5A3199A17280081478F /* Debug */ = {
