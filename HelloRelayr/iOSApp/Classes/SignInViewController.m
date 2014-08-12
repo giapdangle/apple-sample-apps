@@ -1,4 +1,5 @@
 #import "SignInViewController.h"
+#import "Relayr/RLARemoteUser.h"
 
 @interface SignInViewController ()
 
@@ -9,11 +10,6 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-}
-
-- (void)didReceiveMemoryWarning
-{
-  [super didReceiveMemoryWarning];
 }
 
 @end
