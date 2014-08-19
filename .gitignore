@@ -1,7 +1,7 @@
 ########################################
 # Temporary and build files of the workspace
 ########################################
-tmp/
+/tmp/
 
 ########################################
 # OS X temporary files that should never be committed

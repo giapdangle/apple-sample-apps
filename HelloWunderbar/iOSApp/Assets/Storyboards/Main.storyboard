@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6205" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hLa-hz-q4A">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
+    </dependencies>
+    <scenes>
+        <!--Main Controller-->
+        <scene sceneID="mFH-fQ-2JL">
+            <objects>
+                <viewController id="hLa-hz-q4A" customClass="MainController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="awO-mE-Bgg"/>
+                        <viewControllerLayoutGuide type="bottom" id="SCJ-1x-adj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gFH-RM-d6h">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kUg-5t-yri">
+                                <rect key="frame" x="277" y="550" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.20853662063905665" green="0.84782608695652173" blue="0.31170850377552478" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="hLa-hz-q4A" eventType="touchUpInside" id="jMt-Sk-EbC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fr0-Lt-zgq">
+                                <rect key="frame" x="277" y="490" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.84782608695652173" green="0.36111368528531079" blue="0.25047365554285483" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="hLa-hz-q4A" eventType="touchUpInside" id="aBO-1j-s13"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Fr0-Lt-zgq" secondAttribute="centerX" id="Avf-iC-jSG"/>
+                            <constraint firstAttribute="centerX" secondItem="kUg-5t-yri" secondAttribute="centerX" id="S5s-g4-4jp"/>
+                            <constraint firstItem="kUg-5t-yri" firstAttribute="width" secondItem="Fr0-Lt-zgq" secondAttribute="width" id="VTb-ub-MWL"/>
+                            <constraint firstAttribute="bottom" secondItem="kUg-5t-yri" secondAttribute="bottom" constant="20" id="VU9-ir-yv9"/>
+                            <constraint firstItem="kUg-5t-yri" firstAttribute="top" secondItem="Fr0-Lt-zgq" secondAttribute="bottom" constant="30" id="fvg-6H-jGT"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AxG-2t-5r5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="489" y="298"/>
+        </scene>
+    </scenes>
+</document>

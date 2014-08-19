@@ -1,10 +1,19 @@
-@import UIKit;
-@import XCTest;
+//
+//  MacAppTests.m
+//  MacAppTests
+//
+//  Created by Marcos Sánchez-Dehesa on 12/08/14.
+//
+//
 
-@interface iOSAppTests : XCTestCase
+#import <Cocoa/Cocoa.h>
+#import <XCTest/XCTest.h>
+
+@interface MacAppTests : XCTestCase
+
 @end
 
-@implementation iOSAppTests
+@implementation MacAppTests
 
 - (void)setUp {
     [super setUp];
