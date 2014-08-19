@@ -1,11 +1,10 @@
-@import UIKit;
+@import Cocoa;
 @import XCTest;
 
-@interface iOSAppTests : XCTestCase
-
+@interface OSXAppTests : XCTestCase
 @end
 
-@implementation iOSAppTests
+@implementation OSXAppTests
 
 - (void)setUp {
     [super setUp];
