@@ -2,6 +2,7 @@
 # Temporary and build files of the workspace
 ########################################
 /tmp/
+DerivedData
 
 ########################################
 # OS X temporary files that should never be committed
