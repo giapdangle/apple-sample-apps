@@ -5,7 +5,7 @@
 
 #pragma mark - Constants
 
-// These value are specific to the sample app. Replace them with your own apps values (which are available on the apps page of the developer dashboard).
+// These value are specific to the sample app. Replace them with the values for your own app (which are available on the apps page of the developer dashboard).
 static NSString* const kSignInViewControllerAppID = @"e1b4cb0f-f586-4147-910b-d2e8de9889c1";
 static NSString* const kSignInViewControllerSecret = @"b_InkHAavjwtWnFZ_SlDXV1x.nVuUXAW";
 static NSString* const kSignInViewControllerRedirectURI = @"https://relayr.io";
@@ -24,7 +24,6 @@ static NSString* const kSignInViewControllerRedirectURI = @"https://relayr.io";
 
 @implementation SignInViewController
 
-
 #pragma mark - View Management
 
 - (void)viewWillAppear:(BOOL)animated
@@ -37,11 +36,6 @@ static NSString* const kSignInViewControllerRedirectURI = @"https://relayr.io";
   [self checkReachability];
 }
 
-- (void)viewDidLoad
-{
-  [super viewDidLoad];
-}
-
 - (void)didReceiveMemoryWarning
 {
   [super didReceiveMemoryWarning];
@@ -50,7 +44,7 @@ static NSString* const kSignInViewControllerRedirectURI = @"https://relayr.io";
 
 #pragma mark - API Calls
 
-// Most of these calls will probably be used in model code rather than in a view controller, but in order that the architecture of the demo app is as simple as possible, they have been included in the view controller.
+// Most of these calls will probably be used in model or store manager code rather than in a view controller, however, in order that the architecture of the demo app is as simple as possible, they have been included in the view controller.
 
 - (void)checkReachability
 {
@@ -110,8 +104,9 @@ static NSString* const kSignInViewControllerRedirectURI = @"https://relayr.io";
     }
     else
     {
-      // Handle error
+      // Handle the error.
     }
   }];
 }
+
 @end
