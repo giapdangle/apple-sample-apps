@@ -6,9 +6,9 @@
 #pragma mark - Constants
 
 // These value are specific to the sample app. Replace them with the values for your own app (which are available on the apps page of the developer dashboard).
-static NSString* const kSignInViewControllerAppID = @"e1b4cb0f-f586-4147-910b-d2e8de9889c1";
-static NSString* const kSignInViewControllerSecret = @"b_InkHAavjwtWnFZ_SlDXV1x.nVuUXAW";
-static NSString* const kSignInViewControllerRedirectURI = @"https://relayr.io";
+static NSString* const kAppID = @"e1b4cb0f-f586-4147-910b-d2e8de9889c1";
+static NSString* const kSecret = @"b_InkHAavjwtWnFZ_SlDXV1x.nVuUXAW";
+static NSString* const kRedirectURI = @"https://relayr.io";
 
 @interface SignInViewController ()
 
@@ -74,15 +74,20 @@ static NSString* const kSignInViewControllerRedirectURI = @"https://relayr.io";
 
 - (void)createCloudApp
 {
-  [RelayrApp appWithID:kSignInViewControllerAppID
-     OAuthClientSecret:kSignInViewControllerSecret
-           redirectURI:kSignInViewControllerRedirectURI
+  [RelayrApp appWithID:kAppID
+     OAuthClientSecret:kSecret
+           redirectURI:kRedirectURI
             completion:^(NSError *error, RelayrApp *app) {
               
     if (!error)
     {
       // Put a breakpoint here and print out app in the terminal to see the Name and Description entered in the developer dashboard.
       _relayrApp = app;
+      // Store the app in the keychain so that the sign in credentials don't need to be entered every time the app is launched.
+      if (![RelayrApp storeAppInKeyChain:_relayrApp])
+      {
+        // Something went wrong.
+      }
     }
     else
     {
