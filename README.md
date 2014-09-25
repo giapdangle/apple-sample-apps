@@ -1,7 +1,7 @@
 iOS Code Samples
 ===============
 Welcome to the iOS Code Samples repository.
-Here you will find a  collection of samples and examples to that will assist you in building your first relayr app for iOS.
+Here you will find a  collection of samples and examples that will assist you in building your first relayr app for iOS.
 
 ### The following features are demonstrated in this repository:
 
