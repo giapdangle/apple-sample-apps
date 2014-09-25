@@ -1,7 +1,9 @@
 #import <Relayr/RelayrCloud.h>
 #import <Relayr/RelayrApp.h>
+#import <Relayr/RelayrUser.h>
 
-#import "SignInViewController.h" // Header
+#import "SignInViewController.h" // Headers
+#import "DisplayViewController.h"
 
 #pragma mark - Constants
 
@@ -13,6 +15,7 @@ static NSString* const kSignInViewControllerRedirectURI = @"https://relayr.io";
 @interface SignInViewController ()
 
 @property (strong, nonatomic) RelayrApp* relayrApp;
+@property (strong, nonatomic) RelayrUser* relayrUser;
 @property (strong, nonatomic) IBOutlet UIButton* signInButton;
 @property (strong, nonatomic) IBOutlet UILabel *reachabilityLabel;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *reachabilityActivityIndicator;
@@ -106,7 +109,8 @@ static NSString* const kSignInViewControllerRedirectURI = @"https://relayr.io";
     if (!error)
     {
       // Sign in was sucessful.
-      [self performSegueWithIdentifier:@"SegueToDisplayView" sender:self];
+      _relayrUser = user;
+      [self performSegueWithIdentifier:@"showDisplayView" sender:self];
     }
     else
     {
@@ -114,4 +118,15 @@ static NSString* const kSignInViewControllerRedirectURI = @"https://relayr.io";
     }
   }];
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+  if ([segue.identifier isEqualToString:@"showDisplayView"])
+  {
+    DisplayViewController *displayViewController = segue.destinationViewController;
+    displayViewController.relayrApp = _relayrApp;
+    displayViewController.relayrUser = _relayrUser;
+  }
+}
+
 @end

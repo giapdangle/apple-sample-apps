@@ -82,17 +82,17 @@
                         <outlet property="reachabilityActivityIndicator" destination="qll-ul-2uy" id="uln-JQ-QZT"/>
                         <outlet property="reachabilityLabel" destination="QOz-bC-dd4" id="0N0-Xe-FNE"/>
                         <outlet property="signInButton" destination="Mat-VA-ZkL" id="DsI-Ps-jZ1"/>
-                        <segue destination="Eud-6S-IGa" kind="show" identifier="SegueToDisplayView" id="Iff-Gw-gdJ"/>
+                        <segue destination="Eud-6S-IGa" kind="show" identifier="showDisplayView" id="Iff-Gw-gdJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-27" y="153"/>
         </scene>
-        <!--View Controller-->
+        <!--Display View Controller-->
         <scene sceneID="M81-eo-ZtB">
             <objects>
-                <viewController id="Eud-6S-IGa" sceneMemberID="viewController">
+                <viewController id="Eud-6S-IGa" customClass="DisplayViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NLC-xD-plW"/>
                         <viewControllerLayoutGuide type="bottom" id="UCJ-rM-rWK"/>
