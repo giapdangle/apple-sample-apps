@@ -1,5 +1,6 @@
 #import <Relayr/RelayrTransmitter.h> // relayr
 #import <Relayr/RelayrDevice.h>
+#import <Relayr/RelayrInput.h>
 
 #import "DisplayViewController.h" // Header
 
@@ -81,6 +82,27 @@
   cell.textLabel.text = cellTitle;
   
   return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  if (indexPath.section == 0)
+  {
+    RelayrTransmitter* transmitter = [[_relayrUser.transmitters allObjects] objectAtIndex:indexPath.item];
+    for (RelayrDevice* device in [transmitter.devices allObjects])
+    {
+      NSLog(@"%@", device);
+    }
+  }
+  else if (indexPath.section == 1)
+  {
+    
+    RelayrDevice* device = [[_relayrUser.devices allObjects] objectAtIndex:indexPath.item];
+    for (RelayrInput* input in [device.inputs allObjects])
+    {
+      NSLog(@"%@", input);
+    }
+  }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView*)tableView
