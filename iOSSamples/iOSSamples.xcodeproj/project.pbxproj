@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		7D14869219D40EF000C44BAF /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D14869119D40EF000C44BAF /* DisplayViewController.m */; };
-		7DB2038019D451AC0040AAAA /* Relayr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB2037F19D451AC0040AAAA /* Relayr.framework */; };
+		7D19070319D544730011B774 /* Relayr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D1906FF19D5444E0011B774 /* Relayr.framework */; };
+		7D19070419D544730011B774 /* Relayr.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D1906FF19D5444E0011B774 /* Relayr.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7D19070519D544730011B774 /* PubNub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D19070119D544550011B774 /* PubNub.framework */; };
+		7D19070619D544730011B774 /* PubNub.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D19070119D544550011B774 /* PubNub.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7DD004F019D2F2110080556C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DD004E319D2F2110080556C /* Images.xcassets */; };
 		7DD004F119D2F2110080556C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DD004E519D2F2110080556C /* LaunchScreen.xib */; };
 		7DD004F219D2F2110080556C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DD004E619D2F2110080556C /* Main.storyboard */; };
@@ -56,6 +59,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				7D19070619D544730011B774 /* PubNub.framework in Embed Frameworks */,
+				7D19070419D544730011B774 /* Relayr.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,7 +70,8 @@
 /* Begin PBXFileReference section */
 		7D14869019D40EF000C44BAF /* DisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayViewController.h; sourceTree = "<group>"; };
 		7D14869119D40EF000C44BAF /* DisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayViewController.m; sourceTree = "<group>"; };
-		7DB2037F19D451AC0040AAAA /* Relayr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Relayr.framework; sourceTree = "<group>"; };
+		7D1906FF19D5444E0011B774 /* Relayr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Relayr.framework; path = "../../../../apple-sdk/DerivedData/Relayr/Build/Products/Debug-iphoneos/Relayr.framework"; sourceTree = "<group>"; };
+		7D19070119D544550011B774 /* PubNub.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PubNub.framework; path = "../../../../apple-sdk/DerivedData/Relayr/Build/Products/Debug-iphoneos/PubNub.framework"; sourceTree = "<group>"; };
 		7DD004B919D2F0AF0080556C /* iOSSamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSSamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DD004D219D2F0AF0080556C /* iOSSamplesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSSamplesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DD004E319D2F2110080556C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -86,7 +92,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DB2038019D451AC0040AAAA /* Relayr.framework in Frameworks */,
+				7D19070519D544730011B774 /* PubNub.framework in Frameworks */,
+				7D19070319D544730011B774 /* Relayr.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,7 +212,8 @@
 		7DD0050419D3000D0080556C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7DB2037F19D451AC0040AAAA /* Relayr.framework */,
+				7D1906FF19D5444E0011B774 /* Relayr.framework */,
+				7D19070119D544550011B774 /* PubNub.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -442,6 +450,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/iOSSamples/Frameworks",
+					"/Users/jamie/development/relayr/apple-sdk/DerivedData/Relayr/Build/Products/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/iOSSamples/Configuration/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -457,6 +466,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/iOSSamples/Frameworks",
+					"/Users/jamie/development/relayr/apple-sdk/DerivedData/Relayr/Build/Products/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/iOSSamples/Configuration/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
