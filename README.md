@@ -1,10 +1,11 @@
 ios-sample-apps
 ===============
 
-A collection of samples to get you building your first relayr app for iOS.
+An example app demonstrating the basic features of the relayr iOS SDK.
 
 The following features are demonstrated:
 
-- check that the relayr cloud is reachable,
-- create an app in the realyr cloud,
-- sign in to the cloud,
+- checking that the relayr cloud is reachable,
+- creating an app in the realyr cloud,
+- signing in to the cloud,
+- getting the transmitters and devices of a signed in user.
