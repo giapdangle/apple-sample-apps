@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A361c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dBj-eM-woG">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -18,7 +19,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O7h-yl-zTS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-820" y="153"/>
+            <point key="canvasLocation" x="-780" y="138"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -101,23 +102,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="signed  in" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abm-2L-IOe">
-                                <rect key="frame" x="259" y="289" width="83" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="83" id="h6g-Ei-szX"/>
-                                    <constraint firstAttribute="height" constant="21" id="pGd-f1-UXR"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="2x9-1T-o1F">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Eud-6S-IGa" id="Yrw-rl-evo"/>
+                                    <outlet property="delegate" destination="Eud-6S-IGa" id="1Es-Dl-lVz"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="Abm-2L-IOe" secondAttribute="centerY" constant="0.5" id="Gml-dj-MHK"/>
-                            <constraint firstAttribute="centerX" secondItem="Abm-2L-IOe" secondAttribute="centerX" constant="-0.5" id="hXT-Hg-li4"/>
+                            <constraint firstItem="2x9-1T-o1F" firstAttribute="leading" secondItem="cnx-6G-ldf" secondAttribute="leadingMargin" constant="-16" id="UJY-Lb-35C"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2x9-1T-o1F" secondAttribute="trailing" constant="-16" id="bS1-3w-vCQ"/>
+                            <constraint firstItem="2x9-1T-o1F" firstAttribute="top" secondItem="cnx-6G-ldf" secondAttribute="topMargin" id="dQ6-3w-1P9"/>
+                            <constraint firstItem="UCJ-rM-rWK" firstAttribute="top" secondItem="2x9-1T-o1F" secondAttribute="bottom" id="xWi-VI-it6"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="transmittersAndDevices" destination="2x9-1T-o1F" id="G8U-Ko-mCp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fb5-u4-awB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
