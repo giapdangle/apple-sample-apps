@@ -27,6 +27,11 @@
       _transmittersAndDevices.hidden = NO;
       [_transmittersAndDevices reloadData]; // Dump everything in a tableview...
     }
+    else
+    {
+      // Handle the error
+    }
+   
   }];
 }
 

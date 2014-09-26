@@ -7,5 +7,4 @@
 @property (strong, nonatomic) RelayrApp* relayrApp;
 @property (strong, nonatomic) RelayrUser* relayrUser;
 
-
 @end
