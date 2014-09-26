@@ -4,10 +4,14 @@
 
 -(void)viewDidLoad
 {
-  [super viewDidLoad];
-  
-  NSLog(@"%@", _relayrApp);
-  NSLog(@"%@", _relayrUser);
+  [_relayrUser queryCloudForIoTs:^(NSError *error) {
+    
+    if (!error)
+    {
+      NSLog(@"%@", self.relayrUser.transmitters);
+      NSLog(@"%@", self.relayrUser.devices);
+    }
+  }];
 }
 
 @end

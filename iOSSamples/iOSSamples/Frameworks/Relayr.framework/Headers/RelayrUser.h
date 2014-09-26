@@ -12,56 +12,64 @@
 
 /*!
  *  @abstract A representation of a relayr user and their relayr application.
- *  @discussion This property does not change during the life cycle of the <code>RelayrUser</code>
+ *  @discussion This property does not change during the life cycle of the <code>RelayrUser</code> and it is never <code>nil</code>.
  */
 @property (readonly,nonatomic) NSString* token;
 
 /*!
  *  @abstract A unique idenfier of a <code>RelayrUser</code> instance.
+ *  @discussion This property does not change during the life cycle of the <code>RelayrUser</code> and it is never <code>nil</code>.
  */
 @property (readonly,nonatomic) NSString* uid;
 
 /*!
  *  @abstract A user name for a specific <code>RelayrUser</code> instace.
  *  @discussion It can can be changed in a successful <code>queryCloudForUserInfo:</code> call.
+ *      If <code>nil</code>, the name is unknown. If it is an empty string, the name is not set in the server.
  */
 @property (readonly,nonatomic) NSString* name;
 
 /*!
  *  @abstract Relayr user email for a specific <code>RelayrUser</code> instace.
  *  @discussion It can can be changed in a successful <code>queryCloudForUserInfo:</code> call.
+ *      If <code>nil</code>, the email is unknown. If it is an empty string, the email is not set in the server.
  */
 @property (readonly,nonatomic) NSString* email;
 
 /*!
  *  @abstract Relayr applications installed the specific <code>RelayrUser</code> instace.
  *  @discussion It can can be changed in a successful <code>queryCloudForUserInfo:</code> call.
+ *      If <code>nil</code>, the authorised apps are unknown. If it is an empty set, there are no authorised apps.
  */
-@property (readonly,nonatomic) NSSet* apps;
+@property (readonly,nonatomic) NSSet* authorisedApps;
 
 /*!
  *  @abstract A set of the <code>publisher</code>s listed under the specific user.
  *  @discussion It can can be changed in a successful <code>queryCloudForUserInfo:</code> call.
+ *      If <code>nil</code>, the publishers are unknown. If it is an empty set, there are no publishers set in the server.
  */
 @property (readonly,nonatomic) NSSet* publishers;
 
 /*!
  *  @abstract A set of the Transmitter entities owned by the specific <code>RelayrUser</code> instace.
  *  @discussion It can can be changed in a successful <code>queryCloudForUserInfo:</code> call.
+ *      If <code>nil</code>, the transmitters are unknown. If it is an empty set, there are no transmitters owned by this user in the server.
  */
 @property (readonly,nonatomic) NSSet* transmitters;
 
 /*!
  *  @abstract A set of the Device entities owned by the specific <code>RelayrUser</code> instace
  *  @discussion It can can be changed in a successful <code>queryCloudForUserInfo:</code> call.
+ *      If <code>nil</code>, the devices are unknwon. If it is an empty set, there are no devices owned by this user in the server.
  */
 @property (readonly,nonatomic) NSSet* devices;
 
 /*!
- *  @abstract Devices that the specific <code>RelayrUser</code> instace has bookmarked.
+ *  @abstract Devices that the specific <code>RelayrUser</code> instace has bookmarked. Only public devices can be bookmarked devices.
  *  @discussion It can can be changed in a successful <code>queryCloudForUserInfo:</code> call. 
- *	By Bookmarking a device you are indicating that you have a particular interest in this device. 
- *	In the relayr context, a bookmarked device will appear on a user's Developer Dashboard.
+ *      By Bookmarking a device you are indicating that you have a particular interest in this device.
+ *      In the relayr context, a bookmarked device will appear on a user's Developer Dashboard.
+ *      If <code>nil</code>, the devices bookmarked are unknwon. If it is an empty set, there are no devices bookmarked by this user.
  */
 @property (readonly,nonatomic) NSSet* devicesBookmarked;
 
@@ -85,7 +93,7 @@
  *
  *  @see queryCloudForUserInfo:
  */
-- (void)queryCloudForIoTs:(void (^)(NSError* error, NSNumber* isThereChanges))completion;
+- (void)queryCloudForIoTs:(void (^)(NSError* error))completion;
 
 /*!
  *  @abstract Queries the relayr platform for all the application and publisher entities owned by the user.
@@ -94,16 +102,16 @@
  *
  *  @param completion A block indicating whether the server query was successful or not.
  */
-- (void)queryCloudForUserAppsAndPublishers:(void (^)(NSError* error, NSNumber* isThereChanges))completion;
+- (void)queryCloudForPublishersAndAuthorisedApps:(void (^)(NSError* error))completion;
 
 /*!
- *  @abstract It creates/register a transmitter entity in the Relayr Cloud.
- *  @discussion If this call is successful a <code>RelayrTransmitter</code> object is created and it is added to the <code>transmitters</code> array.
+ *  @abstract Creates/registers a Transmitter entity on the relayr cloud.
+ *  @discussion If this call is successful a <code>RelayrTransmitter</code> object is created and is added to the <code>transmitters</code> array.
  *
- *  @param modelID Model representing the newly transmittter instance. Currently, this argument must be <code>nil</code>. Currently, this argument must be <code>nil</code>.
+ *  @param modelID Idetifier for the newly created transmittter instance. Currently, this argument must be <code>nil</code>. 
  *  @param firmwareVersion The version of the firmware running on the transmitter. Currently, this argument must be <code>nil</code>.
- *  @param name The given name to identify this transmitter. This parameter is required.
- *  @param completion Block indicating whether the server registration call was successful or not. It can be <code>nil</code>.
+ *  @param name The given name to identify the transmitter. This parameter is required.
+ *  @param completion A Block indicating whether the server registration call was successful or not. It can be <code>nil</code>.
  *
  *  @see RelayrTransmitter
  */
@@ -113,12 +121,12 @@
                             completion:(void (^)(NSError* error, RelayrTransmitter* transmitter))completion;
 
 /*!
- *  @abstract It creates/register a device entity in the Relayr Cloud.
- *  @discussion If this call is successful a <code>RelayrDevice</code> object is created and it is added to the <code>devices</code> array.
+ *  @abstract Creates/registers a device entity on the relayr cloud.
+ *  @discussion If this call is successful a <code>RelayrDevice</code> object is created and is added to the <code>devices</code> array.
  *
- *  @param modelID Model representing the newly model instance. This parameter is required.
- *  @param firmwareVersion The version of the firmware running on the transmitter. This parameter is required.
- *  @param name The given name to identify this transmitter. This parameter is required.
+ *  @param modelID Identifier for the newly created device instance. This parameter is required.
+ *  @param firmwareVersion The version of the firmware running on the device. This parameter is required.
+ *  @param name The given name to identify this device. This parameter is required.
  *  @param completion Block indicating whether the server registration call was successful or not. It can be <code>nil</code>.
  *
  *  @see RelayrDevice
