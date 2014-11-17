@@ -72,14 +72,13 @@
         }
     } else if (indexPath.section == 1) {
         RelayrDevice* device = [[_relayrUser.devices allObjects] objectAtIndex:indexPath.item];
-        for (RelayrInput* input in [device.inputs allObjects]) {
-            NSLog(@"%@", input);
-        }
+        NSLog(@"%@", device);
+        NSLog(@"%@", device.inputs); // FIXME: Returns error
     }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView*)tableView {
-    return 2; // One for tranmitters, one for devices.
+    return 2; // Section 1: tranmitters; section 2: devices.
 }
 
 - (NSString*)tableView:(UITableView*)tableView titleForHeaderInSection:(NSInteger)section {
