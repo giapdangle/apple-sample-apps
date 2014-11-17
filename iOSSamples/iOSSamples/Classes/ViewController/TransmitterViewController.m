@@ -23,8 +23,6 @@ static NSString *const kShowDeviceListSegue = @"showDeviceListView";
     _transmitterList.hidden = YES;
     [_relayrUser queryCloudForIoTs:^(NSError *error) {
         if (!error) {
-            NSLog(@"Found %lu transmitters", (unsigned long)_relayrUser.transmitters.count);
-            NSLog(@"Found %lu devices", (unsigned long)_relayrUser.devices.count);
             _transmitterList.hidden = NO;
         } else {
             // Handle the error
@@ -46,7 +44,6 @@ static NSString *const kShowDeviceListSegue = @"showDeviceListView";
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:kShowDeviceListSegue]) {
-        NSLog(@"%@", sender);
         DeviceListViewController *deviceListViewController = segue.destinationViewController;
         deviceListViewController.relayrUser = _relayrUser;
         deviceListViewController.relayrTransmitter = sender;

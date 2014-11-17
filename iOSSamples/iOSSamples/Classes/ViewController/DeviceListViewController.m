@@ -1,8 +1,10 @@
 #import "DeviceListViewController.h" // Header
+#import "DeviceViewController.h"
 
 #pragma mark - Constants
 
 static NSString *const kCellIdentifier = @"Cell";
+static NSString *const kShowDeviceSegue = @"showDeviceView";
 
 
 @interface DeviceListViewController ()
@@ -14,6 +16,17 @@ static NSString *const kCellIdentifier = @"Cell";
 
 
 @implementation DeviceListViewController
+
+
+#pragma mark - View Management
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:kShowDeviceSegue]) {
+        DeviceViewController *deviceViewController = segue.destinationViewController;
+        deviceViewController.relayrDevice = sender;
+    }
+}
+
 
 #pragma mark - Tableview Data Source Methods
 
@@ -38,9 +51,7 @@ static NSString *const kCellIdentifier = @"Cell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     RelayrDevice *device = [[_relayrTransmitter.devices allObjects] objectAtIndex:indexPath.item];
-    NSLog(@"%@", device);
-    NSLog(@"%@", device.inputs);
-    NSLog(@"%@", device.outputs);
+    [self performSegueWithIdentifier:kShowDeviceSegue sender:device];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView*)tableView {

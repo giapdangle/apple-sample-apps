@@ -161,6 +161,7 @@
                     <navigationItem key="navigationItem" title="Devices" id="fgU-7u-hgN"/>
                     <connections>
                         <outlet property="deviceList" destination="Ezt-JP-UoM" id="ZQZ-K7-IYx"/>
+                        <segue destination="ksM-8O-6Gm" kind="show" identifier="showDeviceView" id="nwV-23-OlV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JJd-hn-cqN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -178,12 +179,44 @@
                     <view key="view" contentMode="scaleToFill" id="EbO-LK-xwa">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Device Name: &lt;Device name goes here&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N8P-6i-Odk">
+                                <rect key="frame" x="16" y="72" width="568" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="nDs-kG-JGw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Device UUID: &lt;Device UUID goes here&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Esb-CQ-vMq">
+                                <rect key="frame" x="16" y="101" width="568" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="mBE-9X-4rq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Esb-CQ-vMq" firstAttribute="leading" secondItem="EbO-LK-xwa" secondAttribute="leadingMargin" id="3iL-Av-5HF"/>
+                            <constraint firstItem="Esb-CQ-vMq" firstAttribute="top" secondItem="N8P-6i-Odk" secondAttribute="bottom" constant="8" id="Ial-lC-CYl"/>
+                            <constraint firstItem="N8P-6i-Odk" firstAttribute="leading" secondItem="EbO-LK-xwa" secondAttribute="leadingMargin" id="IdD-cZ-lJZ"/>
+                            <constraint firstItem="Esb-CQ-vMq" firstAttribute="trailing" secondItem="EbO-LK-xwa" secondAttribute="trailingMargin" id="KZ4-11-7nF"/>
+                            <constraint firstItem="N8P-6i-Odk" firstAttribute="top" secondItem="5bN-gE-dgn" secondAttribute="bottom" constant="8" id="dFn-F7-ntn"/>
+                            <constraint firstItem="N8P-6i-Odk" firstAttribute="trailing" secondItem="EbO-LK-xwa" secondAttribute="trailingMargin" id="gaf-1r-Qib"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="deviceIdLabel" destination="Esb-CQ-vMq" id="J7p-3j-hec"/>
+                        <outlet property="deviceNameLabel" destination="N8P-6i-Odk" id="i72-43-TqQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="55S-wY-dhJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2294" y="153"/>
+            <point key="canvasLocation" x="2297" y="153"/>
         </scene>
     </scenes>
 </document>
