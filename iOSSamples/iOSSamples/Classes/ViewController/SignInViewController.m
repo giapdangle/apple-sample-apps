@@ -3,7 +3,7 @@
 #import <Relayr/RelayrUser.h>
 
 #import "SignInViewController.h" // Headers
-#import "DisplayViewController.h"
+#import "MenuViewController.h"
 
 
 #pragma mark - Constants
@@ -90,7 +90,7 @@ static NSString* const kSignInViewControllerRedirectURI = @"https://relayr.io";
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showDisplayView"]) {
-        DisplayViewController *displayViewController = segue.destinationViewController;
+        MenuViewController *displayViewController = segue.destinationViewController;
         displayViewController.relayrApp = _relayrApp;
         displayViewController.relayrUser = _relayrUser;
     }

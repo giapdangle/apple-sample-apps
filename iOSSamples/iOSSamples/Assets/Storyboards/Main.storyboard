@@ -90,10 +90,10 @@
             </objects>
             <point key="canvasLocation" x="-27" y="153"/>
         </scene>
-        <!--Display View Controller-->
+        <!--Menu View Controller-->
         <scene sceneID="M81-eo-ZtB">
             <objects>
-                <viewController id="Eud-6S-IGa" customClass="DisplayViewController" sceneMemberID="viewController">
+                <viewController id="Eud-6S-IGa" customClass="MenuViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NLC-xD-plW"/>
                         <viewControllerLayoutGuide type="bottom" id="UCJ-rM-rWK"/>

@@ -2,17 +2,17 @@
 #import <Relayr/RelayrDevice.h>
 #import <Relayr/RelayrInput.h>
 
-#import "DisplayViewController.h" // Header
+#import "MenuViewController.h" // Header
 
 
-@interface DisplayViewController ()
+@interface MenuViewController ()
 
 @property (strong, nonatomic) IBOutlet UITableView *transmittersAndDevices;
 
 @end
 
 
-@implementation DisplayViewController
+@implementation MenuViewController
 
 
 #pragma mark - View Management

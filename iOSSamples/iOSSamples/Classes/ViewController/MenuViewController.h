@@ -4,7 +4,7 @@
 #import <Relayr/RelayrUser.h>
 
 
-@interface DisplayViewController : UIViewController
+@interface MenuViewController : UIViewController
 
 @property (strong, nonatomic) RelayrApp* relayrApp;
 @property (strong, nonatomic) RelayrUser* relayrUser;

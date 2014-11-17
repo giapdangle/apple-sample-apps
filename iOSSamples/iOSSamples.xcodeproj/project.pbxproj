@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7D14869219D40EF000C44BAF /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D14869119D40EF000C44BAF /* DisplayViewController.m */; };
+		7D14869219D40EF000C44BAF /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D14869119D40EF000C44BAF /* MenuViewController.m */; };
 		7D7D51351A19F97E0027BD4A /* Relayr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D7D51341A19F97E0027BD4A /* Relayr.framework */; };
 		7DD004F019D2F2110080556C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DD004E319D2F2110080556C /* Images.xcassets */; };
 		7DD004F119D2F2110080556C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DD004E519D2F2110080556C /* LaunchScreen.xib */; };
@@ -63,8 +63,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		7D14869019D40EF000C44BAF /* DisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayViewController.h; sourceTree = "<group>"; };
-		7D14869119D40EF000C44BAF /* DisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayViewController.m; sourceTree = "<group>"; };
+		7D14869019D40EF000C44BAF /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		7D14869119D40EF000C44BAF /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		7D7D51341A19F97E0027BD4A /* Relayr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Relayr.framework; sourceTree = "<group>"; };
 		7DD004B919D2F0AF0080556C /* iOSSamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSSamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DD004D219D2F0AF0080556C /* iOSSamplesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSSamplesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,8 +172,8 @@
 			children = (
 				7DD004EC19D2F2110080556C /* SignInViewController.h */,
 				7DD004ED19D2F2110080556C /* SignInViewController.m */,
-				7D14869019D40EF000C44BAF /* DisplayViewController.h */,
-				7D14869119D40EF000C44BAF /* DisplayViewController.m */,
+				7D14869019D40EF000C44BAF /* MenuViewController.h */,
+				7D14869119D40EF000C44BAF /* MenuViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -318,7 +318,7 @@
 				7DD004F519D2F2110080556C /* SignInViewController.m in Sources */,
 				7DD004F419D2F2110080556C /* main.m in Sources */,
 				7DD004F319D2F2110080556C /* AppDelegate.m in Sources */,
-				7D14869219D40EF000C44BAF /* DisplayViewController.m in Sources */,
+				7D14869219D40EF000C44BAF /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
