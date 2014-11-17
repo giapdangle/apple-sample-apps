@@ -7,16 +7,16 @@
 #pragma mark - Constants
 
 // These value are specific to the sample app. Replace them with the appropriate values for your own app. (They are available on the "apps" page of the developer dashboard).
-static NSString* const kSignInViewControllerAppID = @"e1b4cb0f-f586-4147-910b-d2e8de9889c1";
-static NSString* const kSignInViewControllerSecret = @"b_InkHAavjwtWnFZ_SlDXV1x.nVuUXAW";
-static NSString* const kSignInViewControllerRedirectURI = @"https://relayr.io";
+static NSString *const kSignInViewControllerAppID = @"e1b4cb0f-f586-4147-910b-d2e8de9889c1";
+static NSString *const kSignInViewControllerSecret = @"b_InkHAavjwtWnFZ_SlDXV1x.nVuUXAW";
+static NSString *const kSignInViewControllerRedirectURI = @"https://relayr.io";
 
 
 @interface SignInViewController ()
 
-@property (strong, nonatomic) RelayrApp* relayrApp;
-@property (strong, nonatomic) RelayrUser* relayrUser;
-@property (strong, nonatomic) IBOutlet UIButton* signInButton;
+@property (strong, nonatomic) RelayrApp *relayrApp;
+@property (strong, nonatomic) RelayrUser *relayrUser;
+@property (strong, nonatomic) IBOutlet UIButton *signInButton;
 @property (strong, nonatomic) IBOutlet UILabel *reachabilityLabel;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *reachabilityActivityIndicator;
 

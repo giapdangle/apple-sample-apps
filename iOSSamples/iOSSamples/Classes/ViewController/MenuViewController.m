@@ -34,7 +34,7 @@
 
 #pragma mark - Tableview Data Source Methods
 
-- (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSInteger numberOfRows;
     if (section == 0) {
         numberOfRows = (_relayrUser.transmitters.count) ? _relayrUser.transmitters.count : 0;
@@ -45,17 +45,17 @@
     return numberOfRows;
 }
 
-- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString* cellIdentifier = @"Cell";
-    NSString* cellTitle = @"";
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *cellIdentifier = @"Cell";
+    NSString *cellTitle = @"";
     if (indexPath.section == 0) {
-        RelayrTransmitter* transmitter = [[_relayrUser.transmitters allObjects] objectAtIndex:indexPath.item];
+        RelayrTransmitter *transmitter = [[_relayrUser.transmitters allObjects] objectAtIndex:indexPath.item];
         cellTitle = (_relayrUser.transmitters) ? transmitter.name : @"";
     } else if (indexPath.section == 1) {
-        RelayrDevice* device = [[_relayrUser.devices allObjects] objectAtIndex:indexPath.item];
+        RelayrDevice *device = [[_relayrUser.devices allObjects] objectAtIndex:indexPath.item];
         cellTitle = (_relayrUser.devices) ? device.name : @"";
     }
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
@@ -66,7 +66,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        RelayrTransmitter* transmitter = [[_relayrUser.transmitters allObjects] objectAtIndex:indexPath.item];
+        RelayrTransmitter *transmitter = [[_relayrUser.transmitters allObjects] objectAtIndex:indexPath.item];
         NSLog(@"%@", transmitter);
         NSLog(@"%@", transmitter.devices);
     } else if (indexPath.section == 1) {
@@ -80,8 +80,8 @@
     return 2; // Section 1: tranmitters; section 2: devices.
 }
 
-- (NSString*)tableView:(UITableView*)tableView titleForHeaderInSection:(NSInteger)section {
-    NSString* title;
+- (NSString *)tableView:(UITableView*)tableView titleForHeaderInSection:(NSInteger)section {
+    NSString *title;
     if (section == 0) {
         title = @"Transmitters";
     } else if (section == 1) {

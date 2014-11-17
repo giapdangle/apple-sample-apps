@@ -5,6 +5,6 @@
 
 @interface DeviceViewController : UIViewController
 
-@property (strong, nonatomic) RelayrDevice* device;
+@property (strong, nonatomic) RelayrDevice *device;
 
 @end
