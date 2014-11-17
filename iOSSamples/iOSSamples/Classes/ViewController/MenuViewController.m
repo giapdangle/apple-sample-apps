@@ -21,8 +21,8 @@
     _transmittersAndDevices.hidden = YES;
     [_relayrUser queryCloudForIoTs:^(NSError *error) {
         if (!error) {
-            NSLog(@"%lu", (unsigned long)self.relayrUser.transmitters.count);
-            NSLog(@"%lu", (unsigned long)self.relayrUser.devices.count);
+            NSLog(@"Found %lu transmitters", (unsigned long)self.relayrUser.transmitters.count);
+            NSLog(@"Found %lu devices", (unsigned long)self.relayrUser.devices.count);
             _transmittersAndDevices.hidden = NO;
             [_transmittersAndDevices reloadData]; // Dump everything in a tableview...
         } else {
@@ -67,9 +67,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         RelayrTransmitter* transmitter = [[_relayrUser.transmitters allObjects] objectAtIndex:indexPath.item];
-        for (RelayrDevice* device in [transmitter.devices allObjects]) {
-            NSLog(@"%@", device);
-        }
+        NSLog(@"%@", transmitter);
+        NSLog(@"%@", transmitter.devices);
     } else if (indexPath.section == 1) {
         RelayrDevice* device = [[_relayrUser.devices allObjects] objectAtIndex:indexPath.item];
         NSLog(@"%@", device);
