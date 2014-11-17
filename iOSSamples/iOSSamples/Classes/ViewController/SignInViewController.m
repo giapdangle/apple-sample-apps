@@ -10,6 +10,7 @@
 static NSString *const kSignInViewControllerAppID = @"e1b4cb0f-f586-4147-910b-d2e8de9889c1";
 static NSString *const kSignInViewControllerSecret = @"b_InkHAavjwtWnFZ_SlDXV1x.nVuUXAW";
 static NSString *const kSignInViewControllerRedirectURI = @"https://relayr.io";
+static NSString *const kShowTransmitterListSegue = @"showTransmitterListView";
 
 
 @interface SignInViewController ()
@@ -77,7 +78,7 @@ static NSString *const kSignInViewControllerRedirectURI = @"https://relayr.io";
     [_relayrApp signInUser:^(NSError *error, RelayrUser *user) {
         if (!error) {
             _relayrUser = user;
-            [self performSegueWithIdentifier:@"showDisplayView" sender:self];
+            [self performSegueWithIdentifier:kShowTransmitterListSegue sender:self];
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
@@ -85,8 +86,8 @@ static NSString *const kSignInViewControllerRedirectURI = @"https://relayr.io";
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"showDisplayView"]) {
-        MenuViewController *displayViewController = segue.destinationViewController;
+    if ([segue.identifier isEqualToString:kShowTransmitterListSegue]) {
+        TransmitterViewController *displayViewController = segue.destinationViewController;
         displayViewController.relayrApp = _relayrApp;
         displayViewController.relayrUser = _relayrUser;
     }
