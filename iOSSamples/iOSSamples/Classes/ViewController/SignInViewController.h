@@ -3,4 +3,6 @@
 
 @interface SignInViewController : UIViewController
 
+- (void)signOutUser;
+
 @end

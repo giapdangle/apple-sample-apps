@@ -30,11 +30,9 @@ static NSString *const kSignInViewControllerRedirectURI = @"https://relayr.io";
 
 #pragma mark - View Management
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    _signInButton.userInteractionEnabled = NO; // Disabled by default.
-    _signInButton.enabled = NO;
-    [self checkReachability];
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self initialiseView];
 }
 
 
@@ -75,6 +73,7 @@ static NSString *const kSignInViewControllerRedirectURI = @"https://relayr.io";
 #pragma mark - Actions
 
 - (IBAction)signInAction:(id)sender {
+    _signInButton.userInteractionEnabled = NO; // Prevent further presses
     [_relayrApp signInUser:^(NSError *error, RelayrUser *user) {
         if (!error) {
             // Sign in was sucessful.
@@ -92,6 +91,25 @@ static NSString *const kSignInViewControllerRedirectURI = @"https://relayr.io";
         displayViewController.relayrApp = _relayrApp;
         displayViewController.relayrUser = _relayrUser;
     }
+}
+
+
+#pragma mark - Public Methods
+
+- (void)signOutUser {
+    [_relayrApp signOutUser:_relayrUser];
+    [self initialiseView];
+}
+
+
+#pragma mark - Private Methods
+
+- (void)initialiseView {
+    _signInButton.userInteractionEnabled = NO; // Disabled by default.
+    _signInButton.enabled = NO;
+    _reachabilityLabel.text = @"checking that the cloud is reachable...";
+    [_reachabilityActivityIndicator startAnimating];
+    [self checkReachability];
 }
 
 @end

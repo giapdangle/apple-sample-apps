@@ -1,4 +1,5 @@
-#import "MenuViewController.h" // Header
+#import "MenuViewController.h" // Headers
+#import "SignInViewController.h"
 
 
 @interface MenuViewController ()
@@ -29,6 +30,15 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [_transmittersAndDevices reloadData]; // Reload the tableview
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    // Log the user out if they navigate back to the sign in view
+    if ([self.navigationController.topViewController class] == [SignInViewController class]) {
+        [(SignInViewController *)self.navigationController.topViewController signOutUser];
+    }
 }
 
 

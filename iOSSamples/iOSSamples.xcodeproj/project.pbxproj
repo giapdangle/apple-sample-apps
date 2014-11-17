@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		7D14869219D40EF000C44BAF /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D14869119D40EF000C44BAF /* MenuViewController.m */; };
 		7D7D51381A1A05850027BD4A /* DeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D7D51371A1A05850027BD4A /* DeviceViewController.m */; };
-		7D7D513B1A1A0B950027BD4A /* Relayr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D7D51391A1A0B600027BD4A /* Relayr.framework */; };
-		7D7D513C1A1A0B950027BD4A /* Relayr.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D7D51391A1A0B600027BD4A /* Relayr.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7D8368E21A1A1EE3005A9AD7 /* Relayr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D8368E01A1A1ECD005A9AD7 /* Relayr.framework */; };
+		7D8368E31A1A1EE3005A9AD7 /* Relayr.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D8368E01A1A1ECD005A9AD7 /* Relayr.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7DD004F019D2F2110080556C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DD004E319D2F2110080556C /* Images.xcassets */; };
 		7DD004F119D2F2110080556C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DD004E519D2F2110080556C /* LaunchScreen.xib */; };
 		7DD004F219D2F2110080556C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DD004E619D2F2110080556C /* Main.storyboard */; };
@@ -58,7 +58,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7D7D513C1A1A0B950027BD4A /* Relayr.framework in Embed Frameworks */,
+				7D8368E31A1A1EE3005A9AD7 /* Relayr.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,7 +70,7 @@
 		7D14869119D40EF000C44BAF /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		7D7D51361A1A05850027BD4A /* DeviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceViewController.h; sourceTree = "<group>"; };
 		7D7D51371A1A05850027BD4A /* DeviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceViewController.m; sourceTree = "<group>"; };
-		7D7D51391A1A0B600027BD4A /* Relayr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Relayr.framework; sourceTree = "<group>"; };
+		7D8368E01A1A1ECD005A9AD7 /* Relayr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Relayr.framework; sourceTree = "<group>"; };
 		7DD004B919D2F0AF0080556C /* iOSSamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSSamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DD004D219D2F0AF0080556C /* iOSSamplesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSSamplesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DD004E319D2F2110080556C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -91,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D7D513B1A1A0B950027BD4A /* Relayr.framework in Frameworks */,
+				7D8368E21A1A1EE3005A9AD7 /* Relayr.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,7 +212,7 @@
 		7DF13D2B19FB85B200ADB315 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7D7D51391A1A0B600027BD4A /* Relayr.framework */,
+				7D8368E01A1A1ECD005A9AD7 /* Relayr.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
