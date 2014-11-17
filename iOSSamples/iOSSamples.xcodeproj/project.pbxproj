@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7D14869219D40EF000C44BAF /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D14869119D40EF000C44BAF /* MenuViewController.m */; };
 		7D7D51351A19F97E0027BD4A /* Relayr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D7D51341A19F97E0027BD4A /* Relayr.framework */; };
+		7D7D51381A1A05850027BD4A /* DeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D7D51371A1A05850027BD4A /* DeviceViewController.m */; };
 		7DD004F019D2F2110080556C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DD004E319D2F2110080556C /* Images.xcassets */; };
 		7DD004F119D2F2110080556C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DD004E519D2F2110080556C /* LaunchScreen.xib */; };
 		7DD004F219D2F2110080556C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DD004E619D2F2110080556C /* Main.storyboard */; };
@@ -66,6 +67,8 @@
 		7D14869019D40EF000C44BAF /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		7D14869119D40EF000C44BAF /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		7D7D51341A19F97E0027BD4A /* Relayr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Relayr.framework; sourceTree = "<group>"; };
+		7D7D51361A1A05850027BD4A /* DeviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceViewController.h; sourceTree = "<group>"; };
+		7D7D51371A1A05850027BD4A /* DeviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceViewController.m; sourceTree = "<group>"; };
 		7DD004B919D2F0AF0080556C /* iOSSamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSSamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DD004D219D2F0AF0080556C /* iOSSamplesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSSamplesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DD004E319D2F2110080556C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -174,6 +177,8 @@
 				7DD004ED19D2F2110080556C /* SignInViewController.m */,
 				7D14869019D40EF000C44BAF /* MenuViewController.h */,
 				7D14869119D40EF000C44BAF /* MenuViewController.m */,
+				7D7D51361A1A05850027BD4A /* DeviceViewController.h */,
+				7D7D51371A1A05850027BD4A /* DeviceViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -319,6 +324,7 @@
 				7DD004F419D2F2110080556C /* main.m in Sources */,
 				7DD004F319D2F2110080556C /* AppDelegate.m in Sources */,
 				7D14869219D40EF000C44BAF /* MenuViewController.m in Sources */,
+				7D7D51381A1A05850027BD4A /* DeviceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
