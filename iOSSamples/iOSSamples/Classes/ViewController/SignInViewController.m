@@ -36,6 +36,13 @@ static NSString *const kShowTransmitterListSegue = @"showTransmitterListView";
     [self initialiseView];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:kShowTransmitterListSegue]) {
+        TransmitterViewController *displayViewController = segue.destinationViewController;
+        displayViewController.relayrUser = _relayrUser;
+    }
+}
+
 
 #pragma mark - API Calls
 
@@ -83,14 +90,6 @@ static NSString *const kShowTransmitterListSegue = @"showTransmitterListView";
             NSLog(@"%@", error.localizedDescription);
         }
     }];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:kShowTransmitterListSegue]) {
-        TransmitterViewController *displayViewController = segue.destinationViewController;
-        displayViewController.relayrApp = _relayrApp;
-        displayViewController.relayrUser = _relayrUser;
-    }
 }
 
 

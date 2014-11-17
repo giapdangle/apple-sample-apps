@@ -1,13 +1,15 @@
 #import "TransmitterViewController.h" // Headers
 #import "SignInViewController.h"
+#import "DeviceListViewController.h"
 
 #pragma mark - Constants
-static NSString *const kCellIdentifier = @"Cell";
 
+static NSString *const kCellIdentifier = @"Cell";
+static NSString *const kShowDeviceListSegue = @"showDeviceListView";
 
 @interface TransmitterViewController ()
 
-@property (strong, nonatomic) IBOutlet UITableView *transmittersAndDevices;
+@property (strong, nonatomic) IBOutlet UITableView *transmitterList;
 
 @end
 
@@ -18,12 +20,12 @@ static NSString *const kCellIdentifier = @"Cell";
 #pragma mark - View Management
 
 - (void)viewWillAppear:(BOOL)animated {
-    _transmittersAndDevices.hidden = YES;
+    _transmitterList.hidden = YES;
     [_relayrUser queryCloudForIoTs:^(NSError *error) {
         if (!error) {
             NSLog(@"Found %lu transmitters", (unsigned long)_relayrUser.transmitters.count);
             NSLog(@"Found %lu devices", (unsigned long)_relayrUser.devices.count);
-            _transmittersAndDevices.hidden = NO;
+            _transmitterList.hidden = NO;
         } else {
             // Handle the error
         }
@@ -32,14 +34,22 @@ static NSString *const kCellIdentifier = @"Cell";
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [_transmittersAndDevices reloadData]; // Reload the tableview
+    [_transmitterList reloadData]; // Reload the tableview
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    
     if ([self.navigationController.topViewController class] == [SignInViewController class]) {
         [(SignInViewController *)self.navigationController.topViewController signOutUser]; // Log the user out if they navigate back to the sign in view
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:kShowDeviceListSegue]) {
+        NSLog(@"%@", sender);
+        DeviceListViewController *deviceListViewController = segue.destinationViewController;
+        deviceListViewController.relayrUser = _relayrUser;
+        deviceListViewController.relayrTransmitter = sender;
     }
 }
 
@@ -67,8 +77,7 @@ static NSString *const kCellIdentifier = @"Cell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     RelayrTransmitter *transmitter = [[_relayrUser.transmitters allObjects] objectAtIndex:indexPath.item];
-    NSLog(@"%@", transmitter);
-    NSLog(@"%@", transmitter.devices);
+    [self performSegueWithIdentifier:kShowDeviceListSegue sender:transmitter];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView*)tableView {
@@ -76,7 +85,7 @@ static NSString *const kCellIdentifier = @"Cell";
 }
 
 - (NSString *)tableView:(UITableView*)tableView titleForHeaderInSection:(NSInteger)section {
-    NSString *title = @"Transmitters";
+    NSString *title = [NSString stringWithFormat:@"%@'s Transmitters", _relayrUser.name];
 
     return title;
 }
