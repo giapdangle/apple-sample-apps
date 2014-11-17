@@ -1,6 +1,4 @@
-#import <Relayr/RelayrCloud.h> // relayr
-#import <Relayr/RelayrApp.h>
-#import <Relayr/RelayrUser.h>
+#import <Relayr/Relayr.h> // relayr
 
 #import "SignInViewController.h" // Headers
 #import "MenuViewController.h"

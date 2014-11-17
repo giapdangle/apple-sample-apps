@@ -1,7 +1,3 @@
-#import <Relayr/RelayrTransmitter.h> // relayr
-#import <Relayr/RelayrDevice.h>
-#import <Relayr/RelayrInput.h>
-
 #import "MenuViewController.h" // Header
 
 

@@ -1,7 +1,6 @@
 #import <UIKit/UIKit.h> // Apple
 
-#import <Relayr/RelayrApp.h> // relayr
-#import <Relayr/RelayrUser.h>
+#import <Relayr/Relayr.h> // relayr
 
 
 @interface MenuViewController : UIViewController
