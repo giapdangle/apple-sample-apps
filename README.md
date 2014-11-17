@@ -1,11 +1,10 @@
-ios-sample-apps
-===============
+# The iOS Sample Code Repository
 
-An example app demonstrating the basic features of the relayr iOS SDK.
+Welcome to the iOS Sample Code repository. In this repository we exhibit how the SDK can be used to perform the basic actions on the relayr platform.  
 
-The following features are demonstrated:
+The following is demonstrated:
 
-- checking that the relayr cloud is reachable,
-- creating an app in the realyr cloud,
-- signing in to the cloud,
-- getting the transmitters and devices of a signed in user.
+- Checking that the relayr cloud is reachable.
+- Creating an app on the realyr cloud.
+- Signing in to the cloud.
+- Retrieving the transmitters and devices of a signed in user.
