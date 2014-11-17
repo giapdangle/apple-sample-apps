@@ -1,7 +1,7 @@
 #import <Relayr/Relayr.h> // relayr
 
 #import "SignInViewController.h" // Headers
-#import "MenuViewController.h"
+#import "TransmitterViewController.h"
 
 
 #pragma mark - Constants
@@ -50,11 +50,11 @@ static NSString *const kSignInViewControllerRedirectURI = @"https://relayr.io";
                 [_reachabilityActivityIndicator stopAnimating];
                 [self createCloudApp];
             } else {
-                // Cloud not reachable.
+                NSLog(@"Cloud not reachable");
             }
         }
         else {
-            // Handle the error.
+            NSLog(@"%@", error.localizedDescription);
         }
     }];
 }
@@ -65,7 +65,7 @@ static NSString *const kSignInViewControllerRedirectURI = @"https://relayr.io";
             // Put a breakpoint here and print out app in the terminal to see the Name and Description entered in the developer dashboard.
             _relayrApp = app;
         } else {
-            // Handle the error.
+            NSLog(@"%@", error.localizedDescription);
         }
     }];
 }
@@ -76,11 +76,10 @@ static NSString *const kSignInViewControllerRedirectURI = @"https://relayr.io";
     _signInButton.userInteractionEnabled = NO; // Prevent further presses
     [_relayrApp signInUser:^(NSError *error, RelayrUser *user) {
         if (!error) {
-            // Sign in was sucessful.
             _relayrUser = user;
             [self performSegueWithIdentifier:@"showDisplayView" sender:self];
         } else {
-            // Handle error
+            NSLog(@"%@", error.localizedDescription);
         }
     }];
 }
