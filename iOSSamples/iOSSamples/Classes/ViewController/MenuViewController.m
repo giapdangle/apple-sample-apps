@@ -20,11 +20,15 @@
             NSLog(@"Found %lu transmitters", (unsigned long)_relayrUser.transmitters.count);
             NSLog(@"Found %lu devices", (unsigned long)_relayrUser.devices.count);
             _transmittersAndDevices.hidden = NO;
-            [_transmittersAndDevices reloadData]; // Dump everything in a tableview...
         } else {
             // Handle the error
         }
     }];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [_transmittersAndDevices reloadData]; // Reload the tableview
 }
 
 
@@ -68,7 +72,7 @@
     } else if (indexPath.section == 1) {
         RelayrDevice* device = [[_relayrUser.devices allObjects] objectAtIndex:indexPath.item];
         NSLog(@"%@", device);
-        NSLog(@"%@", device.inputs); // FIXME: Returns null
+        NSLog(@"%@", device.inputs);
     }
 }
 
