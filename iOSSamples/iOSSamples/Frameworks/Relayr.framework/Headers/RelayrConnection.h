@@ -1,32 +1,68 @@
 @import Foundation;     // Apple
 @class RelayrDevice;    // Relayr.framework (Public)
 
+#pragma mark - Definitions
+
 /*!
- *  @abstract The type of connection between a Device either a transmitter, a MAC, a mobile device etc.
+ *  @abstract The type of connection between a device and the system running the SDK.
  *
- *  @constant RelayrConnectionTypeCloud The device is connected via the relayr Cloud.
- *  @constant RelayrConnectionTypeBluetooth The device is connected via Bluetooth.
- *  @constant RelayrConnectionTypeUnknown The device is connected via an unknown channel or not connected at all.
+ *  @constant RelayrConnectionTypeCloud The device's data is coming via the relayr Cloud.
+ *  @constant RelayrConnectionTypeDirect The device's data is coming through a direct connection.
+ *  @constant RelayrConnectionTypeUnknown The device's data is not being received or the source is unknown.
  */
 typedef NS_ENUM(NSUInteger, RelayrConnectionType) {
     RelayrConnectionTypeUnknown,
     RelayrConnectionTypeCloud,
-    RelayrConnectionTypeBluetooth
+    RelayrConnectionTypeDirect
+};
+
+/*!
+ *  @abstract The protocol being used by the connection between the system running the SDK and the device's data source.
+ *
+ *  @constant RelayrConnectionProtocolMQTT The protocol used is MQTT.
+ *  @constant RelayrConnectionProtocolBLE The protocol used is Bluetooth Low Energy.
+ *  @constant RelayrConnectionProtocolUnknown The protocol is unknown.
+ */
+typedef NS_ENUM(NSUInteger, RelayrConnectionProtocol) {
+    RelayrConnectionProtocolUnknwon,
+    RelayrConnectionProtocolMQTT,
+    RelayrConnectionProtocolBLE
+};
+
+/*!
+ *  @abstract The scope of the connection.
+ *  @discussion The scope provide interesting information about the technology being used for the connection.
+ *
+ *  @constant RelayrConnectionScopeUnknown The scope is unknown at the moment.
+ *  @constant RelayrConnectionScopePAN Personal Area Network scope. Technologies included here are BLE, Zigbee, etc.
+ *  @constant RelayrConnectionScopeLAN Local Area Network scope. Technologies included here are Ethernet cable connection, WiFi connections, etc.
+ *  @constant RelayrConnectionScopeWAN Wide Area Network scope. Many of the current mobile connection technologies are included here: EDGE, 3G, LTE, etc.
+ */
+typedef NS_ENUM(NSUInteger, RelayrConnectionScope) {
+    RelayrConnectionScopeUnknown,
+    RelayrConnectionScopePAN,
+    RelayrConnectionScopeLAN,
+    RelayrConnectionScopeWAN
 };
 
 /*!
  *  @abstract The state of the connection.
  *
  *  @constant RelayrConnectionStateUnknonw The state of the connection is unknown.
+ *  @constant RelayrConnectionStateUnsupported The machine running the SDK does not support this connection.
+ *  @constant RelayrConnectionStateUnauthorized The OS is not authorizing the SDK to use this connection.
  *  @constant RelayrConnectionStateConnecting The connection is being established.
  *  @constant RelayrConnectionStateConnected The connection is on and functions as expected.
  *  @constant RelayrConnectionStateDisconnecting The connection is being disabled.
  */
 typedef NS_ENUM(NSUInteger, RelayrConnectionState) {
     RelayrConnectionStateUnknown,
+    RelayrConnectionStateUnsupported,
+    RelayrConnectionStateUnauthorized,
     RelayrConnectionStateConnecting,
     RelayrConnectionStateConnected,
-    RelayrConnectionStateDisconnecting
+    RelayrConnectionStateDisconnecting,
+    RelayrConnectionStateDisconnected
 };
 
 /*!
@@ -37,20 +73,55 @@ typedef NS_ENUM(NSUInteger, RelayrConnectionState) {
  */
 @interface RelayrConnection : NSObject
 
+#pragma mark - Public API
+
 /*!
  *  @abstract Specifies which device the connection is associated to.
  */
 @property (readonly,weak,nonatomic) RelayrDevice* device;
 
 /*!
- *  @abstract The connection technology used.
+ *  @abstract Whether the connection is through the cloud or is directly performed with the device.
  */
 @property (readonly,nonatomic) RelayrConnectionType type;
 
 /*!
- *  @abstract The connection state of the current connection type.
+ *  @abstract Protocol being used by the connection between the device's data source and the system running the SDK.
+ */
+@property (readonly,nonatomic) RelayrConnectionProtocol protocol;
+
+/*!
+ *  @abstract The state of the current connection type.
  */
 @property (readonly,nonatomic) RelayrConnectionState state;
+
+/*!
+ *  @abstract The scope of the current connection.
+ */
+@property (readonly,nonatomic) RelayrConnectionScope scope;
+
+#pragma mark Subscriptions
+
+/*!
+ *  @abstract Virtual property that indicates whether there are ongoing subscriptions for this connection channel.
+ *  @discussion Every time this property is called, a calculation is made to check if there are subscriptions running.
+ */
+@property (readonly,nonatomic) BOOL hasOngoingSubscriptions;
+
+/*!
+ *  @abstract Subscribes the block to the state changes of this connection.
+ *  @discussion The block will be executed each time the connection state changes.
+ *
+ *  @param block This block will be executed each time data is available. The block contains three parameters:
+ *      - <code>connection</code>. The connection abstraction object.
+ *      - <code>currentState</code>. The current state of the connection.
+ *      - <code>previousState</code>. The previous state of the connection.
+ *      - <code>unsubscribe</code>. A Boolean parameter, that when set to <code>NO</code>, will stop the subscription.
+ *	@param subscriptionError A Block executed if the subscription cannot be performed (it can be <code>nil</code>.
+ *	If this block is defined, a boolean must be returned, indicating if a subscription retry should be attempted.
+ */
+- (void)subscribeToStateChangesWithBlock:(void (^)(RelayrConnection* connection, RelayrConnectionState currentState, RelayrConnectionState previousState, BOOL* unsubscribe))block
+                                   error:(void (^)(NSError* error))subscriptionError;
 
 /*!
  *  @abstract Subscribes to the state change of the connection.
@@ -63,21 +134,9 @@ typedef NS_ENUM(NSUInteger, RelayrConnectionState) {
  *  @param subscriptionError A Block executed if the subscription cannot be performed (it can be <code>nil</code>. 
  *	If this block is defined, a boolean must be returned, indicating if a subscription retry should be attempted.
  */
-- (void)subscribeToStateChangesWithTarget:(id)target action:(SEL)action error:(BOOL (^)(NSError* error))subscriptionError;
-
-/*!
- *  @abstract Subscribes the block to the state changes of this connection.
- *  @discussion The block will be executed each time the connection state changes.
- *
- *  @param block This block will be executed each time data is available. The block contains three parameters:
- *      - <code>connection</code>. The connection abstraction object.
- *      - <code>currentState</code>. The current state of the connection.
- *      - <code>previousState</code>. The previous state of the connection.
- *      - <code>unsubscribe</code>. A Boolean parameter, that when set to <code>NO</code>, will stop the subscription.
- *	@param subscriptionError A Block executed if the subscription cannot be performed (it can be <code>nil</code>. 
- *	If this block is defined, a boolean must be returned, indicating if a subscription retry should be attempted. 
- */
-- (void)subscribeToStateChangesWithBlock:(void (^)(RelayrConnection* connection, RelayrConnectionState currentState, RelayrConnectionState previousState, BOOL* unsubscribe))block error:(BOOL (^)(NSError* error))subscriptionError;
+- (void)subscribeToStateChangesWithTarget:(id)target
+                                   action:(SEL)action
+                                    error:(void (^)(NSError* error))subscriptionError;
 
 /*!
  *  @abstract Unsubscribes the specific action from the target object.
@@ -87,7 +146,8 @@ typedef NS_ENUM(NSUInteger, RelayrConnectionState) {
  *  @param target The object where the subscription is being sent to.
  *  @param action The action being executed on the target each time information arrives.
  */
-- (void)unsubscribeTarget:(id)target action:(SEL)action;
+- (void)unsubscribeTarget:(id)target
+                   action:(SEL)action;
 
 /*!
  *  @abstract Removes all subscriptions for this connection.

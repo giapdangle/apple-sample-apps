@@ -28,12 +28,13 @@
 
 /*!
  *  @abstract It changes the transmitter's name and push it to the server.
- *  @discussion If the server is not reachable or there was any problem, and error will be returned in the completion block;
+ *  @discussion If the server is not reachable or there was any problem, and error will be returned in the completion block and the name won't be changed;
  *
  *  @param name New name to identify this transmitter with.
- *  @param completion Block returning the success or not of the operation.
+ *  @param completion Block indicating the result of the server push.
  */
-- (void)setNameWith:(NSString*)name completion:(void (^)(NSError* error, NSString* previousName))completion;
+- (void)setNameWith:(NSString*)name
+         completion:(void (^)(NSError* error, NSString* previousName))completion;
 
 /*!
  *  @abstract The owner ID of the specific transmitter, a relayr user.

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7D14869219D40EF000C44BAF /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D14869119D40EF000C44BAF /* DisplayViewController.m */; };
+		7D7D51351A19F97E0027BD4A /* Relayr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D7D51341A19F97E0027BD4A /* Relayr.framework */; };
 		7DD004F019D2F2110080556C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DD004E319D2F2110080556C /* Images.xcassets */; };
 		7DD004F119D2F2110080556C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DD004E519D2F2110080556C /* LaunchScreen.xib */; };
 		7DD004F219D2F2110080556C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DD004E619D2F2110080556C /* Main.storyboard */; };
@@ -15,8 +16,6 @@
 		7DD004F419D2F2110080556C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD004EA19D2F2110080556C /* main.m */; };
 		7DD004F519D2F2110080556C /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD004ED19D2F2110080556C /* SignInViewController.m */; };
 		7DD004FB19D2F2570080556C /* iOSSamplesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD004F819D2F2570080556C /* iOSSamplesTests.m */; };
-		7DF13D2F19FB85DC00ADB315 /* Relayr.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF13D2C19FB85D900ADB315 /* Relayr.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7DF13D3119FB85E800ADB315 /* Relayr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF13D2C19FB85D900ADB315 /* Relayr.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +56,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7DF13D2F19FB85DC00ADB315 /* Relayr.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,6 +65,7 @@
 /* Begin PBXFileReference section */
 		7D14869019D40EF000C44BAF /* DisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayViewController.h; sourceTree = "<group>"; };
 		7D14869119D40EF000C44BAF /* DisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayViewController.m; sourceTree = "<group>"; };
+		7D7D51341A19F97E0027BD4A /* Relayr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Relayr.framework; sourceTree = "<group>"; };
 		7DD004B919D2F0AF0080556C /* iOSSamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSSamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DD004D219D2F0AF0080556C /* iOSSamplesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSSamplesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DD004E319D2F2110080556C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -80,7 +79,6 @@
 		7DD004EF19D2F2110080556C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DD004F819D2F2570080556C /* iOSSamplesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iOSSamplesTests.m; sourceTree = "<group>"; };
 		7DD004FA19D2F2570080556C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7DF13D2C19FB85D900ADB315 /* Relayr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Relayr.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DF13D3119FB85E800ADB315 /* Relayr.framework in Frameworks */,
+				7D7D51351A19F97E0027BD4A /* Relayr.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,7 +205,7 @@
 		7DF13D2B19FB85B200ADB315 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7DF13D2C19FB85D900ADB315 /* Relayr.framework */,
+				7D7D51341A19F97E0027BD4A /* Relayr.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
