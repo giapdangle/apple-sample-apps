@@ -46,7 +46,7 @@
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString* CellIdentifier = @"Cell";
+    static NSString* cellIdentifier = @"Cell";
     NSString* cellTitle = @"";
     if (indexPath.section == 0) {
         RelayrTransmitter* transmitter = [[_relayrUser.transmitters allObjects] objectAtIndex:indexPath.item];
@@ -55,9 +55,9 @@
         RelayrDevice* device = [[_relayrUser.devices allObjects] objectAtIndex:indexPath.item];
         cellTitle = (_relayrUser.devices) ? device.name : @"";
     }
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     cell.textLabel.text = cellTitle;
     
